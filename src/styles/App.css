@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(to right, black, gray, black);
+  color: white;
+}
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.form-container {
+  flex: 1 0 100vw;
+  text-align: center;
+}
+ label, select, button, input {
+   font-size: 1em;
+   margin: 10px;
+ }
+
+.images-container {
+  flex: 1 0 100vw;
+}
+
+img {
+  width: 50vw;
+  height: auto;
+  border-width: 5px 5px 20px 5px;
+  border-color: white;
+}
+
+.img-caption {
+  margin: 0 0 10px 0;
+}
