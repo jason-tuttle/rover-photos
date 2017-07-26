@@ -1,8 +1,12 @@
 import React from 'react';
+import spiral from '../spiral.svg';
 
 export default class ImageDisplay extends React.Component {
   render() {
-    const images = this.props.images;
+    const {images, loading} = this.props;
+    if (loading) {
+      return <div className="images-container"><img src={spiral} className="loading-img" alt="loading data" /></div>
+    }
     if (images.length) {
       return (
         <div className="images-container">
@@ -17,7 +21,7 @@ export default class ImageDisplay extends React.Component {
     } else {
       return (
         <div>
-          <span>Sorry, there are no photos from that rover on that Sol.</span>
+          <span>There are no photos from that rover on that Sol.</span>
         </div>
       )
     }

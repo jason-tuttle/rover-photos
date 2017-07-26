@@ -34,3 +34,13 @@ img {
 .img-caption {
   margin: 0 0 10px 0;
 }
+
+.loading-img {
+  animation: loading-img-spin infinite 1s linear;
+  height: 200px;
+}
+
+@keyframes loading-img-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

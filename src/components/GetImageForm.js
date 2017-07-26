@@ -17,7 +17,8 @@ export default class GetImageForm extends React.Component {
       rover: 'curiosity',
       camera: 'fhaz',
       sol: 1000,
-      images: []
+      images: [],
+      loading: false
     }
   }
 
@@ -34,18 +35,19 @@ export default class GetImageForm extends React.Component {
   }
 
   fetchRoverImage = () => {
+    this.setState({loading: true});
     const {camera, rover, sol} = this.state;
     const imageUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&api_key=${API_KEY}`;
     fetch(imageUrl)
       .then(response => response.json())
       .then(data => {
         console.log(data.photos);
-        this.setState({images: data.photos});
+        this.setState({images: data.photos, loading: false});
       });
   };
 
   render() {
-    const {images, rover, camera} = this.state;
+    const {images, rover, camera, loading} = this.state;
     return (
       <div className="form-container">
         <form>
@@ -71,7 +73,7 @@ export default class GetImageForm extends React.Component {
             <input type="number" onChange={this.handleSolChange} max="2000" min="1000" value={this.state.value}/>
         </form>
         <GetImageButton clickFn={this.fetchRoverImage}/>
-        <ImageDisplay images={images}/>
+        <ImageDisplay images={images} loading={loading}/>
       </div>
     )
   }
