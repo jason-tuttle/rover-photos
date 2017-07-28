@@ -51,13 +51,13 @@ export default class GetImageForm extends React.Component {
     return (
       <div className="form-container">
         <form>
-          <label htmlFor="rover">Rover</label>
+          <label htmlFor="rover">Rover:</label>
             <select onChange={this.handleRoverChange} id="rover" value={this.state.value}>
               <option value="curiosity">Curiosity</option>
               <option value="opportunity">Opportunity</option>
               <option value="spirit">Spirit</option>
             </select><br />
-            <label htmlFor="camera">Camera Type</label>
+            <label htmlFor="camera">Camera Type:</label>
             <select onChange={this.handleCameraChange} id="camera" value={this.state.value}>
               <option value="fhaz" disabled={!ROVER_CAMS[rover].includes('fhaz')}>FHAZ (Front Hazard)</option>
               <option value="rhaz" disabled={!ROVER_CAMS[rover].includes('rhaz')}>RHAZ (Rear Hazard)</option>
@@ -69,8 +69,8 @@ export default class GetImageForm extends React.Component {
               <option value="pancam" disabled={!ROVER_CAMS[rover].includes('pancam')}>Panoramic Camera</option>
               <option value="minites" disabled={!ROVER_CAMS[rover].includes('minites')}>Miniature Thermal Emission Spectrometer (Mini-TES)</option>
             </select><br />
-            <label htmlFor="sol">Martian Sol: 1000-2000</label>
-            <input type="number" onChange={this.handleSolChange} max="2000" min="1000" value={this.state.value}/>
+            <label htmlFor="sol">Martian Sol (range 1000-2000):</label>
+            <input type="number" onChange={this.handleSolChange} max="2000" min="1000" value={this.state.sol}/>
         </form>
         <GetImageButton clickFn={this.fetchRoverImage}/>
         <ImageDisplay images={images} loading={loading}/>

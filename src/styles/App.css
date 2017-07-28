@@ -3,15 +3,23 @@
 }
 
 body {
-  background: linear-gradient(to right, black, gray, black);
+  background-image: url('../images/pia19920_bigsky-selfie.jpg');
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #192936;
   color: white;
 }
 .container {
   display: flex;
   flex-flow: column nowrap;
-  width: 100vw;
+  align-items: center;
+  width: 60vw;
   height: 100vh;
   text-align: center;
+  margin: 0 auto;
+  background-color: rgba(100, 80, 50, 0.5);
 }
 
 h1 {
@@ -21,7 +29,7 @@ h1 {
 }
 
 .form-container {
-  flex: 1 0 100vw;
+  flex: 0 0 60vw;
   text-align: center;
 }
  label, select, button, input {
@@ -30,11 +38,11 @@ h1 {
  }
 
 .images-container {
-  flex: 1 0 100vw;
+  flex: 1 0 50vw;
 }
 
 img {
-  width: 50vw;
+  width: 45vw;
   height: auto;
   border-width: 5px 5px 20px 5px;
   border-color: white;
@@ -42,6 +50,13 @@ img {
 
 .img-caption {
   margin: 0 0 10px 0;
+}
+.footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  align-self: flex-end;
+}
+.footer a:link, .footer a:visited {
+  color: black;
 }
 
 .loading-img {

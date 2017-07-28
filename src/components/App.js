@@ -9,6 +9,7 @@ class App extends Component {
       <div className="container">
         <h1>Mars Rover Image Browser</h1>
         <GetImageForm />
+        <div className="footer">All imagery provided by <a href="https://api.nasa.gov/index.html">api.nasa.gov</a></div>
       </div>
     );
   }
